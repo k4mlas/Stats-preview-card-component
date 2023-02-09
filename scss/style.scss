@@ -1,33 +1,35 @@
 @import './colors';
 
-
 body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	min-height: 100vh;
 	background-color: $veryDarkBlueMainBackground;
 }
 
 .card {
-	width: 375px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 375px;
 	border-radius: 15px;
 	background-color: $darkDesaturatedBlueCardBackground;
 	overflow: hidden;
 
 	&__picture {
-		position: relative;
+		width: 100%;
+		height: 300px;
+		background-color: hsl(277, 64%, 61%);
 	}
 	&__img {
 		width: 100%;
 		height: 100%;
-	}
-	&__shadow {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-
-		background-color: hsla(233, 59%, 42%, 0.615);
+		object-fit: cover;
+		mix-blend-mode: multiply;
+		opacity: 0.8;
 	}
 
 	&__body {
@@ -51,9 +53,6 @@ body {
 		text-align: center;
 		color: $slightlyTransparentWhiteMainParagraph;
 	}
-	&__dataBodyBig {
-		display: none;
-	}
 
 	&__data {
 		color: $whiteMainHeadingStats;
@@ -64,53 +63,11 @@ body {
 	}
 	&__dataText {
 		font-family: 'Lexend Deca', sans-serif;
-
 		font-size: 15px;
 		text-align: center;
 		text-transform: uppercase;
 		margin-top: -15px;
-
 		color: $slightlyTransparentWhiteMainParagraph;
-	}
-}
-
-@media (min-width: 992px) {
-	body {
-		height: 100vh;
-	}
-
-	.card {
-		display: flex;
-		flex-direction: row-reverse;
-		width: 1000px;
-
-		&__picture {
-			width: 100%;
-		}
-
-		&__name {
-			text-align: left;
-		}
-		&__text {
-			text-align: left;
-		}
-		&__dataBody {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-		}
-		&__dataBodyPosition {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			margin-right: 35px;
-		}
-
-		
-
-		
 	}
 }
 
@@ -119,7 +76,49 @@ body {
 	font-size: 11px;
 	text-align: center;
 	color: #fff;
+	font-size: 1em;
 	a {
 		color: hsl(228, 45%, 44%);
+	}
+}
+
+@media (min-width: 992px) {
+	.card {
+		flex-direction: row-reverse;
+		max-width: 1000px;
+		max-height: 405px;
+
+		&__picture {
+			width: 100%;
+			height: 405px;
+		}
+		&__body {
+			padding: 30px;
+		}
+		&__name {
+			text-align: left;
+			font-size: 2.3em;
+		}
+		&__text {
+			font-size: 1em;
+			text-align: left;
+		}
+		&__dataBody {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+		}
+		&__data {
+			text-align: left;
+			margin-right: 3em;
+		}
+		&__dataText {
+			text-align: left;
+			margin-right: 3em;
+		}
 	}
 }

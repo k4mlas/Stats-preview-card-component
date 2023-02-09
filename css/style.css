@@ -3,27 +3,32 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-color: hsl(233deg, 47%, 7%);
 }
 
 .card {
-  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 375px;
   border-radius: 15px;
   background-color: hsl(244deg, 38%, 16%);
   overflow: hidden;
 }
 .card__picture {
-  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: hsl(277deg, 64%, 61%);
 }
 .card__img {
   width: 100%;
   height: 100%;
-}
-.card__shadow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(233deg, 59%, 42%, 0.615);
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
 }
 .card__body {
   display: flex;
@@ -46,9 +51,6 @@ body {
   text-align: center;
   color: hsla(0deg, 0%, 100%, 0.75);
 }
-.card__dataBodyBig {
-  display: none;
-}
 .card__data {
   color: hsl(0deg, 0%, 100%);
   font-size: 25px;
@@ -65,44 +67,53 @@ body {
   color: hsla(0deg, 0%, 100%, 0.75);
 }
 
-@media (min-width: 992px) {
-  body {
-    height: 100vh;
-  }
-  .card {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 1000px;
-  }
-  .card__picture {
-    width: 100%;
-  }
-  .card__name {
-    text-align: left;
-  }
-  .card__text {
-    text-align: left;
-  }
-  .card__dataBody {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .card__dataBodyPosition {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 35px;
-  }
-}
 .attribution {
   margin-top: 25px;
   font-size: 11px;
   text-align: center;
   color: #fff;
+  font-size: 1em;
 }
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media (min-width: 992px) {
+  .card {
+    flex-direction: row-reverse;
+    max-width: 1000px;
+    max-height: 405px;
+  }
+  .card__picture {
+    width: 100%;
+    height: 405px;
+  }
+  .card__body {
+    padding: 30px;
+  }
+  .card__name {
+    text-align: left;
+    font-size: 2.3em;
+  }
+  .card__text {
+    font-size: 1em;
+    text-align: left;
+  }
+  .card__dataBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .card__data {
+    text-align: left;
+    margin-right: 3em;
+  }
+  .card__dataText {
+    text-align: left;
+    margin-right: 3em;
+  }
 }/*# sourceMappingURL=style.css.map */

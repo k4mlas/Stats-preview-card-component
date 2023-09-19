@@ -1,6 +1,6 @@
 # Frontend Mentor - Stats preview card component
 
-https://k4mlas.github.io/Stats-preview-card-component/
+I invite you to check my project by clicking on the link below: https://k4mlas.github.io/Stats-preview-card-component/
 
 ![Design preview for the Stats preview card component coding challenge](./design/desktop-preview.jpg)
 
